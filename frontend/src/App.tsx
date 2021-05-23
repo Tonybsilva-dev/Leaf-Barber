@@ -1,7 +1,7 @@
 import React from 'react';
 import GlobalStyles from './styles/global'
 
-import SingIn from './pages/SignIn'
+import SingIn from './pages/SingUp'
 
 // import { Container } from './styles';
 

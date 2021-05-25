@@ -33,7 +33,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Tonybsilva-dev/Leaf-Barber">
-    <img src="https://i.imgur.com/JTtM1wT.png" width="400px" height="400px" alt="Logo">
+    <img src="https://i.imgur.com/WyTAPeR.png" width="400px" height="400px" alt="Logo">
   </a>
 
   <h3 align="center">Leaf Barber</h3>
@@ -41,7 +41,7 @@
   <p align="center">
     A Complete BarberApp React Application
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Tonybsilva-dev/Leaf-Barber"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/Tonybsilva-dev/Leaf-Barber">View Demo</a>
@@ -84,6 +84,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<!--
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
@@ -98,7 +99,7 @@ Here's a blank template to get started:
 * []()
 * []()
 
-
+-->
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -117,7 +118,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/Tonybsilva-dev/Leaf-Barber.git
    ```
 2. Install NPM packages
    ```sh
@@ -128,9 +129,11 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+<!--
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
+-->
 _For more examples, please refer to the [Documentation](https://example.com)_
 
 
@@ -138,7 +141,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/Tonybsilva-dev/Leaf-Barber/issues) for a list of proposed features (and known issues).
 
 
 
@@ -163,11 +166,13 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 <!-- CONTACT -->
-## Contact
+### Autor
+---
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+<a href="https://tonybsilvadev.medium.com/">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54373473?v=4" width="150px;" alt=""/>
+ <br />
+ <sub><b>Antônio Silva</b></sub></a> <a href="https://tonybsilvadev.medium.com/" title="Medium">🚀</a>
 
 
 

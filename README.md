@@ -172,16 +172,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <a href="https://tonybsilvadev.medium.com/">
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54373473?v=4" width="150px;" alt=""/>
  <br />
- <sub><b>Antônio Silva</b></sub></a> <a href="https://tonybsilvadev.medium.com/" title="Medium">🚀</a>
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
+ <sub><b>Antônio Bernardino da Silva</b></sub></a> <a href="https://tonybsilvadev.medium.com/" title="Medium".</a>
 
 
 

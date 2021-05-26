@@ -1,6 +1,7 @@
 import 'reflect-metadata';
 
 import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors'
 import 'express-async-errors';
 import routes from './routes';
 import UploadConfig from './config/upload';
@@ -8,6 +9,7 @@ import AppError from './errors/AppError';
 import './database';
 
 const app = express();
+app.use(cors())
 app.use(express.json());
 
 
@@ -63,7 +65,7 @@ app.use((err: Error, request: any, response: Response, next: NextFunction) => {
   })
 });
 
-const port = 3334
+const port = 3002
 
 app.listen({ port }, () => {
   console.log(`🚀 Server started on port ${port}!`)

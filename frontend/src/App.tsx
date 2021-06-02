@@ -1,6 +1,6 @@
 import React from 'react';
 import GlobalStyles from './styles/global'
-import { AuthProvider } from './context/AuthContext'
+import { AuthProvider } from './hooks/AuthContext'
 import SingIn from './pages/SignIn'
 
 // import { Container } from './styles';

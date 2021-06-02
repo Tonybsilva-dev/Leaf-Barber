@@ -1,5 +1,5 @@
-import React, { useRef, useCallback, useContext } from 'react'
-import { useAuth } from '../../context/AuthContext'
+import React, { useRef, useCallback } from 'react'
+import { useAuth } from '../../hooks/AuthContext'
 import logo from '../../assets/logo.svg';
 import { Container, Content, Background } from './styles';
 import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';

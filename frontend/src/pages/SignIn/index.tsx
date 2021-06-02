@@ -1,5 +1,6 @@
 import React, { useRef, useCallback } from 'react'
 import { useAuth } from '../../hooks/AuthContext'
+import { useToast } from '../../hooks/ToastContext'
 import logo from '../../assets/logo.svg';
 import { Container, Content, Background } from './styles';
 import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
@@ -19,8 +20,9 @@ interface SignInFormData {
 const SignIn: React.FC = () => {
 
   const formRef = useRef<FormHandles>(null)
-  const { signIn, user } = useAuth()
-  console.log(user)
+  const { signIn } = useAuth()
+  const { addToast } = useToast()
+
 
   const handleSubmit = useCallback(async (data: SignInFormData) => {
     try {
@@ -36,7 +38,7 @@ const SignIn: React.FC = () => {
         abortEarly: false
       })
 
-      signIn({
+      await signIn({
         email: data.email,
         password: data.password
       })
@@ -47,9 +49,9 @@ const SignIn: React.FC = () => {
         formRef.current?.setErrors(errors)
       }
       // Disparar um Toast
-
+      addToast();
     }
-  }, [signIn])
+  }, [signIn, addToast])
 
   return (
     <Container>

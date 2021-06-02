@@ -1,6 +1,7 @@
 import React from 'react';
 import GlobalStyles from './styles/global'
-import { AuthProvider } from './hooks/AuthContext'
+import AppProvider from './hooks/index'
+
 import SingIn from './pages/SignIn'
 
 import ToastContainer from  './components/ToastContainer'
@@ -10,9 +11,10 @@ import ToastContainer from  './components/ToastContainer'
 
 const App: React.FC = () => (
   <>
-    <AuthProvider>
+    <AppProvider>
       <SingIn />
-    </AuthProvider>
+    </AppProvider>
+
     <ToastContainer />
     <GlobalStyles />
   </>

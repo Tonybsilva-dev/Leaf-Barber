@@ -20,6 +20,7 @@ const SignIn: React.FC = () => {
 
   const formRef = useRef<FormHandles>(null)
   const { signIn, user } = useAuth()
+  console.log(user)
 
   const handleSubmit = useCallback(async (data: SignInFormData) => {
     try {
@@ -40,10 +41,13 @@ const SignIn: React.FC = () => {
         password: data.password
       })
     } catch (error) {
-      console.log(error)
 
-      const errors = getValidationErrors(error)
-      formRef.current?.setErrors(errors)
+      if ( error instanceof Yup.ValidationError){
+        const errors = getValidationErrors(error)
+        formRef.current?.setErrors(errors)
+      }
+      // Disparar um Toast
+
     }
   }, [signIn])
 

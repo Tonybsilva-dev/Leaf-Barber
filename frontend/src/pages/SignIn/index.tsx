@@ -1,5 +1,5 @@
 import React, { useRef, useCallback, useContext } from 'react'
-import AuthContext from '../../context/AuthContext'
+import { AuthContext } from '../../context/AuthContext'
 import logo from '../../assets/logo.svg';
 import { Container, Content, Background } from './styles';
 import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
@@ -11,13 +11,17 @@ import Input from '../../components/Input';
 import Button from '../../components/Button'
 
 
+interface SignInFormData {
+  email: string;
+  password: string;
+}
+
 const SignIn: React.FC = () => {
 
   const formRef = useRef<FormHandles>(null)
-  const auth = useContext(AuthContext)
-  console.log(auth)
+  const { signIn } = useContext(AuthContext)
 
-  const handleSubmit = useCallback(async (data: object) => {
+  const handleSubmit = useCallback(async (data: SignInFormData) => {
     try {
 
       formRef.current?.setErrors({})
@@ -26,18 +30,22 @@ const SignIn: React.FC = () => {
         email: Yup.string().required('Email obrigatório').email('Digite um email válido'),
         password: Yup.string().required('Senha obrigatória')
       })
+
       await schema.validate(data, {
         abortEarly: false
       })
 
-
+      signIn({
+        email: data.email,
+        password: data.password
+      })
     } catch (error) {
       console.log(error)
 
       const errors = getValidationErrors(error)
       formRef.current?.setErrors(errors)
     }
-  }, [])
+  }, [signIn])
 
   return (
     <Container>
@@ -45,8 +53,8 @@ const SignIn: React.FC = () => {
         <img src={logo} alt="logo" />
         <Form onSubmit={handleSubmit} ref={formRef} >
           <h1>Faça seu logon</h1>
-          <Input type="text" name="email" id="" placeholder="Email" icon={FiMail} autoComplete="off" />
-          <Input type="password" name="password" id="" placeholder="Senha" icon={FiLock} autoComplete="off" />
+          <Input type="text" name="email" id="email" placeholder="Email" icon={FiMail} autoComplete="off" />
+          <Input type="password" name="password" id="password" placeholder="Senha" icon={FiLock} autoComplete="off" />
           <Button type="submit">Entrar</Button>
 
           <a href="forgot">Esqueci minha senha</a>

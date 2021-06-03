@@ -4,9 +4,8 @@ import AppProvider from './hooks/index'
 
 import SingIn from './pages/SignIn'
 
-import ToastContainer from  './components/ToastContainer'
-
 // import { Container } from './styles';
+
 //Componente por volta dos componentes que devem ter acesso ao contexto de aplicação
 
 const App: React.FC = () => (
@@ -14,8 +13,6 @@ const App: React.FC = () => (
     <AppProvider>
       <SingIn />
     </AppProvider>
-
-    <ToastContainer />
     <GlobalStyles />
   </>
 )

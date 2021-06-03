@@ -1,16 +1,16 @@
-import React, { useRef, useCallback } from 'react'
-import { useAuth } from '../../hooks/AuthContext'
-import { useToast } from '../../hooks/ToastContext'
-import logo from '../../assets/logo.svg';
-import { Container, Content, Background } from './styles';
-import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
+import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
-import { FormHandles } from '@unform/core'
+import React, { useCallback, useRef } from 'react';
+import { FiLock, FiLogIn, FiMail } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
-import getValidationErrors from '../../utils/getValidationErrors'
+import logo from '../../assets/logo.svg';
+import Button from '../../components/Button';
 import Input from '../../components/Input';
-import Button from '../../components/Button'
-
+import { useAuth } from '../../hooks/AuthContext';
+import { useToast } from '../../hooks/ToastContext';
+import getValidationErrors from '../../utils/getValidationErrors';
+import { Background, Container, Content, AnimationContainer } from './styles';
 
 interface SignInFormData {
   email: string;
@@ -22,6 +22,7 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
   const { signIn } = useAuth()
   const { addToast } = useToast()
+
 
 
   const handleSubmit = useCallback(async (data: SignInFormData) => {
@@ -50,9 +51,11 @@ const SignIn: React.FC = () => {
       });
     } catch (error) {
 
-      if ( error instanceof Yup.ValidationError){
+      if (error instanceof Yup.ValidationError) {
         const errors = getValidationErrors(error)
         formRef.current?.setErrors(errors)
+
+        return
       }
       // Disparar um Toast
       addToast({
@@ -66,19 +69,21 @@ const SignIn: React.FC = () => {
   return (
     <Container>
       <Content>
-        <img src={logo} alt="logo" />
-        <Form onSubmit={handleSubmit} ref={formRef} >
-          <h1>Faça seu logon</h1>
-          <Input type="text" name="email" id="email" placeholder="Email" icon={FiMail} autoComplete="off" />
-          <Input type="password" name="password" id="password" placeholder="Senha" icon={FiLock} autoComplete="off" />
-          <Button type="submit">Entrar</Button>
+        <AnimationContainer>
+          <img src={logo} alt="logo" />
+          <Form onSubmit={handleSubmit} ref={formRef} >
+            <h1>Faça seu logon</h1>
+            <Input type="text" name="email" id="email" placeholder="Email" icon={FiMail} autoComplete="off" />
+            <Input type="password" name="password" id="password" placeholder="Senha" icon={FiLock} autoComplete="off" />
+            <Button type="submit">Entrar</Button>
 
-          <a href="forgot">Esqueci minha senha</a>
-        </Form>
-        <a href="login">
-          <FiLogIn />
+            <Link to="forgot">Esqueci minha senha</Link>
+          </Form>
+          <Link to="/signUp">
+            <FiLogIn />
         Criar conta
-        </a>
+        </Link>
+        </AnimationContainer>
       </Content>
 
       <Background />

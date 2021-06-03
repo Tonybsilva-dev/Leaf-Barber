@@ -44,7 +44,7 @@ const SignIn: React.FC = () => {
       })
 
       addToast({
-        title: 'Feito',
+        title: 'FEITO',
         type: 'success',
         description: 'Usuário conectado com sucesso.'
       });
@@ -56,7 +56,7 @@ const SignIn: React.FC = () => {
       }
       // Disparar um Toast
       addToast({
-        title: 'Erro na autenticação',
+        title: 'ERRO',
         type: 'error',
         description: 'Desculpe, não conseguimos encontrar uma conta com essas credenciais, tente novamente.'
       });

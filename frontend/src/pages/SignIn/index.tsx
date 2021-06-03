@@ -42,6 +42,12 @@ const SignIn: React.FC = () => {
         email: data.email,
         password: data.password
       })
+
+      addToast({
+        title: 'Feito',
+        type: 'success',
+        description: 'Usuário conectado com sucesso.'
+      });
     } catch (error) {
 
       if ( error instanceof Yup.ValidationError){
@@ -49,7 +55,11 @@ const SignIn: React.FC = () => {
         formRef.current?.setErrors(errors)
       }
       // Disparar um Toast
-      addToast();
+      addToast({
+        title: 'Erro na autenticação',
+        type: 'error',
+        description: 'Desculpe, não conseguimos encontrar uma conta com essas credenciais, tente novamente.'
+      });
     }
   }, [signIn, addToast])
 

@@ -20,7 +20,7 @@ interface SignInFormData {
 const SignIn: React.FC = () => {
 
   const formRef = useRef<FormHandles>(null)
-  const { signIn } = useAuth()
+  const { signIn, user } = useAuth()
   const { addToast } = useToast()
 
 
@@ -45,9 +45,9 @@ const SignIn: React.FC = () => {
       })
 
       addToast({
-        title: 'FEITO',
+        title: 'Conectado',
         type: 'success',
-        description: 'Usuário conectado com sucesso.'
+        description: `Bem vindo ${user}`
       });
     } catch (error) {
 
